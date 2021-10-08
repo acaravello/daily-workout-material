@@ -11,7 +11,7 @@ export const initialState: AuthState = {
     isAuthenticated: false,
 }
 
-export const  authReducer = (state = initialState, action ) =>  {
+export function authReducer (state = initialState, action )  {
     switch(action.type) {
         case SET_AUTHENTICATED:
             return {
@@ -25,3 +25,5 @@ export const  authReducer = (state = initialState, action ) =>  {
         return state;
     }
 }
+
+

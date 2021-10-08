@@ -23,7 +23,7 @@ const initialState: TrainingState = {
     activeTraining: null
 }
 
-export const trainingReducer = (state = initialState, action) => {
+export function trainingReducer (state = initialState, action) {
     switch(action.type) {
         case SET_AVAILABLE_TRAININGS:
             return {

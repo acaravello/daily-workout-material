@@ -11,7 +11,7 @@ export const initialState: TemplateState = {
     isLoading: false,
 }
 
-export const  templateReducer = (state = initialState, action ) =>  {
+export function templateReducer (state = initialState, action ) {
     switch(action.type) {
         case START_LOADING:
             return {
