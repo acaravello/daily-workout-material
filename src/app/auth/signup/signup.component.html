@@ -1,0 +1,30 @@
+
+    <section>
+        <form [formGroup]="signupForm" (ngSubmit)="onFormSubmit(signupForm, formDirective)" #formDirective="ngForm" [ngClass]="{ 'form-disabled' : isLoading$ | async}">
+            <mat-form-field class="form-field" >
+                <input matInput type="email" placeholder="Your e-mail" formControlName="email">
+                <mat-error *ngIf="signupForm.get('email').hasError('email')">
+                   must be a valid e-mail 
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <input type="password" matInput placeholder="Your password" formControlName="password">
+                <mat-error *ngIf="signupForm.get('password').hasError('minlength')">password must be at least 5 characters long</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="birthdatePicker" formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="birthdatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #birthdatePicker></mat-datepicker>
+              </mat-form-field>
+              <div class="form-field form-div">
+                <mat-checkbox class="mr-12" formControlName="acceptTerms">Agree to terms & conditions</mat-checkbox>
+              </div>
+            <div class="actions-container">
+                <button type="submit" mat-flat-button color="accent" [disabled]="signupForm.invalid">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <app-spinner *ngIf="isLoading$ | async"></app-spinner>
+

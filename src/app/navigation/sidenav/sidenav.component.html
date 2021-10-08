@@ -1,0 +1,8 @@
+
+<mat-nav-list>
+    <a mat-list-item routerLink="/" routerLinkActive="active" esact (click)="onToggle()" *ngIf="userIsLogged$ | async"> Home </a>
+    <a mat-list-item routerLink="/training" routerLinkActive="active" *ngIf="userIsLogged$ | async" (click)="onToggle()"> Training </a>
+    <a mat-list-item routerLink="/login" routerLinkActive="active" *ngIf="!(userIsLogged$ | async)" (click)="onToggle()">Login</a>
+    <a mat-list-item routerLink="/signup" routerLinkActive="active" *ngIf="!(userIsLogged$ | async)" (click)="onToggle()"> Signup </a>
+    <a mat-list-item (click)="onLogout()" routerLinkActive="active" *ngIf="userIsLogged$ | async" (click)="onToggle()">Logout</a>
+ </mat-nav-list>

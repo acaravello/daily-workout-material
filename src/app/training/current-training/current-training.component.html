@@ -1,0 +1,26 @@
+
+
+<div class="current-training-container">
+    <div class="current-training-container">
+        <h2 class="executing-title">
+            <ng-template [ngIf]="currentExercise">
+            Executing {{ currentExercise.name | lowercase }}:
+            </ng-template>
+        </h2>
+        <p class="duration">
+            <ng-template [ngIf]="currentExercise">Total duration: {{ currentExercise.duration }}s.</ng-template>
+        </p>
+        <mat-progress-spinner mode="determinate" [value]="trainingProgress" [ngClass]="{'job-done': jobDone}"></mat-progress-spinner>
+        <h1>{{trainingProgress}}%</h1>
+        <ng-container *ngIf="!jobDone; else doneTemplate">
+            <p>Keep on going, you can do it!</p>
+        </ng-container>
+        <ng-template #doneTemplate>
+            <p class="training-done">You did it, great work!</p>
+            <p>Calories burned: <span class="calories">{{ currentExercise.calories }}</span></p>
+        </ng-template>
+        
+        
+    </div>
+    <button mat-raised-button color="accent" (click)="jobDone ? returnFromTraining() : stopTraining()">{{!jobDone ? 'Stop': 'Return'}}</button>
+</div>

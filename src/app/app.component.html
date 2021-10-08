@@ -1,0 +1,14 @@
+
+<div class="app">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <app-sidenav (mobileMenuToggle)="onToggle()"></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-main-menu (sidenavToggle)="onToggle()"></app-main-menu>
+      <div class="route-container"><router-outlet></router-outlet></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+</div>
+

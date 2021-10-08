@@ -1,0 +1,17 @@
+
+
+<mat-toolbar color="accent">
+    <div class="mobile-menu">
+        <button mat-icon-button  class="sidenav-icon" aria-label="menu icon" (click)="onToggle()"><mat-icon>menu</mat-icon></button>
+    </div>
+    <div class="logo">
+      Daily Workout
+  </div>
+    <div class="links-container">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngIf="userIsLogged$ | async">Home</a>
+      <a routerLink="/training" routerLinkActive="active" *ngIf="userIsLogged$| async"> Training</a>
+      <a routerLink="/login" routerLinkActive="active" *ngIf="!(userIsLogged$ | async)">Login</a>
+      <a routerLink="/signup" routerLinkActive="active" *ngIf="!(userIsLogged$ | async)">Signup</a>
+      <a (click)="onLogout()" routerLinkActive="active" *ngIf="userIsLogged$ | async">Logout</a>
+    </div>
+  </mat-toolbar>

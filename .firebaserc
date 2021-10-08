@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "react-burger-app-8bd76": {
+      "hosting": {
+        "first": [
+          "react-burger-app-8bd76"
+        ]
+      }
+    }
+  }
+}

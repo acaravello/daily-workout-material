@@ -1,0 +1,45 @@
+
+h1 {
+    font-weight: 500;
+}
+
+.welcome {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.welcome section {
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    padding: 12px 24px;
+    min-height: 150px;
+    color: #fff;
+    border: 1px solid #ff4081;
+    border-radius: 10px;
+    background-color: #fc5296;
+    background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%); 
+}
+
+.welcome section:not(:last-child) {
+    margin-right: 10px;
+}
+
+@media(max-width: 699px) {
+
+    .welcome {
+        display: block;
+    }
+
+    .welcome section:not(:last-child) {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .welcome section {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}

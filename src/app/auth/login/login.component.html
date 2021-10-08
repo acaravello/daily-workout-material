@@ -1,0 +1,21 @@
+
+    <section>
+        <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm, formDirective)" #formDirective="ngForm" [ngClass]="{'form-disabled': isLoading$ | async}">
+            <mat-form-field class="form-field" >
+                <input matInput type="email" placeholder="Your e-mail" formControlName="email">
+                <mat-error *ngIf="loginForm.get('email').hasError('email')">
+                   must be a valid e-mail 
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-field">
+                <input type="password" matInput placeholder="Your password" formControlName="password">
+                <mat-error *ngIf="loginForm.get('password').hasError('minlength')">password must be at least 5 characters long</mat-error>
+            </mat-form-field>
+            <div class="actions-container">
+                <button type="submit" mat-flat-button color="accent" [disabled]="loginForm.invalid">Login</button>
+            </div>
+        </form>
+    </section>
+
+    <app-spinner *ngIf="isLoading$ | async"></app-spinner>
+

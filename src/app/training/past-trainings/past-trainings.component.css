@@ -1,0 +1,39 @@
+
+mat-form-field {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+table th, table td{
+    text-align: left;
+}
+
+.past-exercises-container {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+tr.mat-header-row, tr.mat-row {
+    height: 62px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.mat-icon-button {
+    color: #ff4081;
+}
+
+@media(max-width: 699px) {
+    .mobile-hide {
+        display: none;
+    }
+    mat-form-field {
+        width: auto;
+    }
+}

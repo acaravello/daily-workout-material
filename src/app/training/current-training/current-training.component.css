@@ -1,0 +1,45 @@
+
+
+.current-training-container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.mat-progress-spinner {
+    margin: auto;
+}
+
+.training-done {
+    font-style: italic;
+    font-size: 17px;
+}
+
+.executing-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+span.calories {
+    color: #ff4081;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.duration {
+    font-style: italic;
+}
+
+::ng-deep .mat-progress-spinner-fill::after {
+    background-color: #fbc02d;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #fbc02d;
+}
+
+::ng-deep .mat-progress-spinner.job-done circle, .mat-spinner circle {
+    stroke: #ff4081;
+}

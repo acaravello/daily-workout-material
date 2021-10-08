@@ -1,0 +1,27 @@
+
+<section class="new-training-container">
+    <mat-card>
+        <mat-card-title>
+            Time to start a workout!
+        </mat-card-title>
+        <mat-card-content>
+            Select a type of training:
+            <ng-container *ngIf="(availableExercises$ | async).length > 0; else spinnerTemplate">
+              <mat-form-field>
+                <mat-label>Workout:</mat-label>
+                <mat-select (selectionChange)="onSelectionChange($event)" >
+                  <mat-option *ngFor="let exercise of availableExercises$ | async" [value]="exercise.id">
+                    {{exercise.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </ng-container>
+            <ng-template #spinnerTemplate>
+              <div class="app-spinner-container"><app-spinner> </app-spinner></div>
+            </ng-template>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" mat-button color="accent" (click)="startNewTraining()" [disabled]="!optionSelected">Start</button>
+        </mat-card-actions>
+    </mat-card>
+</section>

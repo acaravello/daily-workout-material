@@ -1,0 +1,11 @@
+
+<div class="dialog-container">
+    <h1 mat-dialog-title>Are you sure you wanna stop your <span class="exercise">{{ exercise | lowercase }}</span> training?</h1>
+    <mat-dialog-actions>
+        <div class="actions-container">
+            <button mat-button [mat-dialog-close]='false'>Cancel</button>
+            <button mat-raised-button color="accent" [mat-dialog-close]='true'>Confirm</button>
+        </div>
+    </mat-dialog-actions>
+</div>
+

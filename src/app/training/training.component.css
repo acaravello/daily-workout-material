@@ -1,0 +1,16 @@
+
+mat-tab-group {
+    margin-top: -60px;
+}
+
+.tab-container {
+    margin-top: 60px;
+}
+
+.current-training-container {
+    margin-top: 40px;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #fbc02d !important;
+}
